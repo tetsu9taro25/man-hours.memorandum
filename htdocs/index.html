@@ -3,19 +3,52 @@
 </head>
 
 <body>
-  <div class="container">
+
+  <div class="result-area">
     <header>
-      <h1>Todo List ({{incompleteCount}})</h1>
-      <label class="hide-completed">
-        <input type="checkbox" checked="{{hideCompleted}}" />
-        Hide Completed Tasks
-      </label>
       {{> loginButtons}}
+      <h1><a href="#">&#12296;</a>{{date}}<a href="#">&#12297;</a></h1>
       {{#if currentUser}}
         <form class="new-task">
-          <input type="text" name="text" placeholder="Type to add new tasks" />
+          <input type="text" name="text" placeholder="Type to add a new project or task" />
+          <div class="plan-time-area">
+            <span>Starting</span>
+            <input type="time" name="planstime" />
+            <span>Ending</span>
+            <input type="time" name="planetime" />
+          </div>
+          <input type="submit" name="ok" value="OK" />
         </form>
       {{/if}}
+
+    </header>
+    <div class="result-back">
+      <ol class="hour-list">
+        {{#each hours}}
+          {{> hour}}
+        {{/each}}
+      </ol>
+      <ol class="task-bar-record">
+        {{#each bars}}
+          {{> bar}}
+        {{/each}}
+      </ol>
+      <ol class="task-bar-plan">
+        {{#each bars}}
+          {{> bar}}
+        {{/each}}
+      </ol>
+      <ol class="project-list">
+        {{#each projects}}
+          {{> project}}
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <header>
+      <h1>Project ({{incompleteCount}})</h1>
     </header>
 
     <ul>
@@ -24,21 +57,24 @@
       {{/each}}
     </ul>
   </div>
+
 </body>
+
+
+<template name="hour">
+  <li>{{text}}</li>
+</template>
+<template name="bar">
+  <li class="h_{{text}}"></li>
+</template>
+<template name="project">
+  <li class="h_{{text}}"></li>
+</template>
+
 
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
     <button class="delete">&times;</button>
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-    {{#if isOwner}}
-      <button class="toggle-private">
-        {{#if private}}
-          Private
-        {{else}}
-          Public
-        {{/if}}
-      </button>
-    {{/if}}
-    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+    <span class="text">{{text}} - {{planstime}}~{{planetime}}</span>
   </li>
 </template>

@@ -1,0 +1,171 @@
+/* CSS declarations go here */
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#315481), to(#918e82));
+  background-image: -webkit-linear-gradient(top, #315481, #918e82 100%);
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+.result-area {
+  width: 55%;
+  margin: 0 auto;
+  background: white;
+}
+.result-area .result-back {
+  overflow: hidden;
+}
+.result-area ol {
+  float: left;
+}
+.result-area .hour-list {
+  width: 35px;
+  text-align: right;
+}
+.result-area .hour-list li {
+  padding: 5px 9px 5px 3px;
+}
+.result-area .task-bar-record {
+  width: 8px;
+  background-color: #fe2e2e;
+}
+.result-area .task-bar-plan {
+  width: 8px;
+  background-color: #2e9afe;
+}
+.result-area .project-list {
+  width: 85.5%;
+}
+.result-area .project-list li {
+  padding: 5px;
+}
+.input-area {
+  width: 40%;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+header {
+  background: #d2edf4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d0edf5), to(#e1e5f0));
+  background-image: -webkit-linear-gradient(top, #d0edf5, #e1e5f0 100%);
+  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  padding: 10px;
+  position: relative;
+}
+#login-buttons {
+  display: block;
+}
+#login-dropdown-list {
+  width: 180px;
+}
+h1 {
+  font-size: 1.5em;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+h1 a {
+  font-size: 0.75em;
+  margin: 0 7%;
+  text-decoration: none;
+}
+form {
+  margin-top: 5px;
+  margin-bottom: -5px;
+  position: relative;
+}
+.new-task {
+  text-align: center;
+}
+.new-task input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 5px;
+  padding: 4px 2px;
+  width: 100%;
+  font-size: 1em;
+}
+.new-task input[type="time"] {
+  width: 75px;
+  padding: 0;
+  text-align: center;
+}
+.new-task input[name="planstime"] {
+  margin-right: 15px;
+}
+.new-task input[type="submit"] {
+  margin: 5px auto;
+  padding: 5px 0;
+  width: 60px;
+}
+.new-task input:focus {
+  outline: 0;
+}
+button {
+  padding: 0;
+}
+button.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+li {
+  position: relative;
+  list-style: none;
+  border-bottom: #eee solid 1px;
+  height: 32px;
+  padding: 5px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+li .checked {
+  color: #888;
+}
+li .checked .text {
+  text-decoration: line-through;
+}
+li .private {
+  background: #eee;
+  border-color: #ddd;
+}
+.toggle-private {
+  margin-left: 5px;
+}
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
+  .search {
+    width: 150px;
+    clear: both;
+  }
+  .new-task input {
+    padding-bottom: 5px;
+  }
+}
